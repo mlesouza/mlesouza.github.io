@@ -61,11 +61,7 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(180deg,
-            #f8fafc 0%,
-            #e0e7ff 50%,
-            #fce7f3 100%);
-    background-attachment: fixed;
+    background: #ffffff;
 }
 
 /* Loading Screen */
@@ -1721,30 +1717,14 @@ body:hover .cursor-outline {
     box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
 }
 
-/* Section-Specific Themes - Geometric Patterns */
+/* Clean White Theme with Colorful Elements */
 
-/* Hero Section - Diagonal Lines Pattern */
+/* Hero Section - Vibrant Gradient Hero */
 .hero {
-    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     color: white;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        repeating-linear-gradient(45deg,
-            transparent,
-            transparent 35px,
-            rgba(255, 255, 255, 0.03) 35px,
-            rgba(255, 255, 255, 0.03) 70px);
-    pointer-events: none;
 }
 
 .hero .container {
@@ -1756,164 +1736,41 @@ body:hover .cursor-outline {
 .hero p,
 .hero .eyebrow {
     color: white !important;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* About Section - Dots Pattern */
-.about {
+/* All Other Sections - Pure White */
+.about,
+.experience,
+.skills,
+.projects,
+.education {
     background: #ffffff;
-    position: relative;
-}
-
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    pointer-events: none;
 }
 
 .about h2 {
-    color: var(--about-color) !important;
-}
-
-.about .stat-number {
-    color: var(--about-color);
-}
-
-/* Experience Section - Grid Pattern */
-.experience {
-    background: #f8fafc;
-    position: relative;
-}
-
-.experience::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
+    color: #4f46e5 !important;
 }
 
 .experience h2 {
-    color: var(--experience-color) !important;
-}
-
-.experience .timeline::before {
-    background: linear-gradient(180deg, transparent, var(--experience-color), transparent) !important;
-}
-
-/* Skills Section - Waves Pattern */
-.skills {
-    background: #ffffff;
-    position: relative;
-}
-
-.skills::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q 25 30, 50 50 T 100 50" stroke="rgba(99,102,241,0.05)" fill="none" stroke-width="2"/></svg>');
-    background-size: 100px 100px;
-    pointer-events: none;
+    color: #06b6d4 !important;
 }
 
 .skills h2 {
-    color: var(--skills-color) !important;
-}
-
-.skill-item:hover {
-    border-color: var(--skills-color) !important;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2) !important;
-}
-
-/* Projects Section - Circles Pattern */
-.projects {
-    background: #f8fafc;
-    position: relative;
-}
-
-.projects::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
-    pointer-events: none;
+    color: #8b5cf6 !important;
 }
 
 .projects h2 {
-    color: var(--projects-color) !important;
-}
-
-.project-card[data-company="linx"] {
-    border-left-color: var(--projects-color) !important;
-}
-
-/* Education Section - Hexagon Pattern */
-.education {
-    background: #ffffff;
-    position: relative;
-}
-
-.education::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(30deg, rgba(14, 165, 233, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(14, 165, 233, 0.02) 87.5%, rgba(14, 165, 233, 0.02)),
-        linear-gradient(150deg, rgba(14, 165, 233, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(14, 165, 233, 0.02) 87.5%, rgba(14, 165, 233, 0.02));
-    background-size: 80px 140px;
-    pointer-events: none;
+    color: #3b82f6 !important;
 }
 
 .education h2 {
-    color: var(--education-color) !important;
+    color: #0ea5e9 !important;
 }
 
-.education-icon {
-    background: linear-gradient(135deg, var(--education-color), #38bdf8) !important;
-}
-
-/* Contact Section - Gradient Mesh */
+/* Contact Section - Dark Footer */
 .contact {
-    background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+    background: #1e293b;
     color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 .contact h2,
@@ -1941,56 +1798,79 @@ section::after {
     opacity: 0.1;
 }
 
-/* Enhanced Cards for Better Readability */
-.project-card,
-.education-content,
-.skill-item {
-    background: white !important;
-    border: 1px solid rgba(79, 70, 229, 0.1) !important;
-    box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.05),
-        0 4px 12px rgba(79, 70, 229, 0.08) !important;
+/* Colorful, Vibrant Cards */
+.project-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    border-left: 4px solid var(--primary) !important;
+    border-top: 1px solid rgba(79, 70, 229, 0.1) !important;
+    border-right: 1px solid rgba(79, 70, 229, 0.1) !important;
+    border-bottom: 1px solid rgba(79, 70, 229, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.1) !important;
     transition: all var(--transition-normal);
 }
 
-.project-card:hover,
-.education-content:hover {
-    border-color: var(--primary) !important;
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.08),
-        0 12px 40px rgba(79, 70, 229, 0.15) !important;
-    transform: translateY(-2px);
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(79, 70, 229, 0.2) !important;
+    border-left-width: 6px !important;
 }
 
-/* Better Text Contrast in Cards */
+.education-content,
+.skill-item {
+    background: white !important;
+    border: 2px solid rgba(79, 70, 229, 0.2) !important;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08) !important;
+    transition: all var(--transition-normal);
+}
+
+.education-content:hover,
+.skill-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary) !important;
+    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.15) !important;
+}
+
+/* Vibrant Text in Cards */
 .project-card h3,
 .education-content h3 {
-    color: var(--text-primary) !important;
-    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
 }
 
 .project-card p,
-.education-content p,
-.education-description {
+.education-content p {
     color: var(--text-secondary) !important;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 .project-company,
 .education-institution {
     color: var(--primary) !important;
+    font-weight: 700;
+}
+
+.project-year {
+    background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.tag,
+.focus-tag {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(59, 130, 246, 0.1)) !important;
+    border: 2px solid var(--primary) !important;
+    color: var(--primary) !important;
     font-weight: 600;
 }
 
-/* Section Headers with Better Visibility */
+/* Colorful Section Headers */
 section h2 {
-    color: var(--text-primary) !important;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-.section-subtitle {
-    color: var(--text-secondary) !important;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 3rem;
 }
 
 /* Header Update for Light Theme */
