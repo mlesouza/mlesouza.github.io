@@ -1,3 +1,11 @@
+// Loading Screen
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader-wrapper');
+    setTimeout(() => {
+        loader.classList.add('loaded');
+    }, 2500); // Wait for animations
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Portfolio script loaded! Version: God-Tier Polish v2");
     // Typing Effect
@@ -285,6 +293,49 @@ document.addEventListener('DOMContentLoaded', () => {
             if (link.getAttribute('href').includes(currentSection)) {
                 link.classList.add('active');
             }
+        });
+    });
+
+    // Magnetic Buttons
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            // Magnetic strength
+            const strength = 0.3;
+            btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+        });
+    });
+
+    // Parallax Scrolling
+    const parallaxElements = document.querySelectorAll('.parallax-element');
+    window.addEventListener('scroll', () => {
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            const yPos = -(window.scrollY * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Enhanced Blob Movement (mouse tracking)
+    const blobs = document.querySelectorAll('.blob');
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        blobs.forEach((blob, index) => {
+            const speed = (index + 1) * 20;
+            const x = (mouseX - 0.5) * speed;
+            const y = (mouseY - 0.5) * speed;
+
+            blob.style.transform = `translate(${x}px, ${y}px)`;
         });
     });
 });
