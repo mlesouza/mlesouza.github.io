@@ -456,4 +456,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Create Animated Particles in Hero
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            hero.appendChild(particle);
+        }
+    }
 });

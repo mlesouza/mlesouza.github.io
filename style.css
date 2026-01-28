@@ -1,5 +1,5 @@
 :root {
-    /* Light Theme with Harmonious Blue/Indigo Palette */
+    /* Unified Violet Palette */
     --bg-primary: #f8fafc;
     --bg-secondary: #f1f5f9;
     --bg-card: #ffffff;
@@ -9,26 +9,23 @@
     --text-secondary: #64748b;
     --text-accent: #334155;
 
-    /* Unified Color Palette - Blues & Indigos */
-    --primary: #4f46e5;
-    --primary-light: #818cf8;
-    --primary-dark: #3730a3;
-    --primary-glow: rgba(79, 70, 229, 0.3);
+    /* Main Colors - All Violet Family */
+    --primary: #7c3aed;
+    /* Violet 600 */
+    --primary-light: #a78bfa;
+    /* Violet 400 */
+    --primary-dark: #5b21b6;
+    /* Violet 800 */
+    --primary-glow: rgba(124, 58, 237, 0.3);
 
-    --secondary: #6366f1;
-    --accent: #3b82f6;
+    --secondary: #9333ea;
+    /* Purple 600 */
+    --accent: #a855f7;
+    /* Purple 500 */
     --success: #10b981;
 
-    /* Section Colors - All from same blue/indigo family */
-    --hero-color: #4f46e5;
-    --about-color: #3b82f6;
-    --experience-color: #06b6d4;
-    --skills-color: #6366f1;
-    --projects-color: #8b5cf6;
-    --education-color: #0ea5e9;
-
-    --border: #e2e8f0;
-    --border-light: #cbd5e1;
+    --border: #f3e8ff;
+    --border-light: #faf5ff;
 
     /* Typography */
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -218,21 +215,6 @@ body {
     will-change: transform;
 }
 
-/* Grid Overlay */
-.grid-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.08;
-    background-image:
-        linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
-}
 
 /* Floating Shapes */
 .floating-shapes {
@@ -1108,14 +1090,14 @@ body:hover .cursor-outline {
 }
 
 .contact-wrapper {
-    background: linear-gradient(135deg, var(--bg-card), rgba(139, 92, 246, 0.1));
+    background: white;
     padding: 4rem;
     border-radius: 24px;
     text-align: center;
-    border: 1px solid var(--border);
+    border: 3px solid var(--primary);
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.15);
     display: flex;
     flex-direction: column;
-
 }
 
 .contact-text {
@@ -1719,10 +1701,10 @@ body:hover .cursor-outline {
 
 /* Clean White Theme with Colorful Elements */
 
-/* Hero Section - Vibrant Gradient Hero */
+/* Hero Section - White with Animated Elements */
 .hero {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    color: white;
+    background: #ffffff;
+    color: var(--text-primary);
     position: relative;
     overflow: hidden;
 }
@@ -1732,50 +1714,107 @@ body:hover .cursor-outline {
     z-index: 2;
 }
 
-.hero h1,
-.hero p,
-.hero .eyebrow {
-    color: white !important;
+.hero h1 {
+    background: linear-gradient(135deg, #7c3aed, #9333ea, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
 }
 
-/* All Other Sections - Pure White */
-.about,
-.experience,
-.skills,
-.projects,
-.education {
-    background: #ffffff;
+.hero .eyebrow {
+    color: var(--primary) !important;
+    font-weight: 700;
 }
+
+.hero p {
+    color: var(--text-secondary) !important;
+}
+
+/* Animated Floating Shapes */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+    animation: float 20s infinite ease-in-out;
+}
+
+.hero::before {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    top: -200px;
+    right: -200px;
+    animation-delay: 0s;
+}
+
+.hero::after {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #a855f7, #c084fc);
+    bottom: -250px;
+    left: -250px;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -30px) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+    }
+}
+
+/* All Other Sections - Animated Backgrounds (see animated-sections.css) */
 
 .about h2 {
-    color: #4f46e5 !important;
+    color: #7c3aed !important;
 }
 
+/* Violet 600 */
 .experience h2 {
-    color: #06b6d4 !important;
-}
-
-.skills h2 {
     color: #8b5cf6 !important;
 }
 
+/* Violet 500 */
+.skills h2 {
+    color: #9333ea !important;
+}
+
+/* Purple 600 */
 .projects h2 {
-    color: #3b82f6 !important;
+    color: #a855f7 !important;
 }
 
+/* Purple 500 */
 .education h2 {
-    color: #0ea5e9 !important;
+    color: #7c3aed !important;
 }
 
-/* Contact Section - Dark Footer */
+/* Violet 600 */
+
+/* Contact Section - White with Colorful Card */
 .contact {
-    background: #1e293b;
-    color: white;
+    background: #ffffff;
+    color: var(--text-primary);
 }
 
-.contact h2,
+.contact h2 {
+    color: var(--primary) !important;
+}
+
 .contact p {
-    color: white !important;
+    color: var(--text-secondary) !important;
 }
 
 /* Section Separators */
@@ -1800,34 +1839,34 @@ section::after {
 
 /* Colorful, Vibrant Cards */
 .project-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fcf7ff 100%) !important;
     border-left: 4px solid var(--primary) !important;
-    border-top: 1px solid rgba(79, 70, 229, 0.1) !important;
-    border-right: 1px solid rgba(79, 70, 229, 0.1) !important;
-    border-bottom: 1px solid rgba(79, 70, 229, 0.1) !important;
-    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.1) !important;
+    border-top: 1px solid rgba(124, 58, 237, 0.1) !important;
+    border-right: 1px solid rgba(124, 58, 237, 0.1) !important;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08) !important;
     transition: all var(--transition-normal);
 }
 
 .project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(79, 70, 229, 0.2) !important;
+    box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15) !important;
     border-left-width: 6px !important;
 }
 
 .education-content,
 .skill-item {
     background: white !important;
-    border: 2px solid rgba(79, 70, 229, 0.2) !important;
-    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08) !important;
+    border: 2px solid rgba(124, 58, 237, 0.1) !important;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.05) !important;
     transition: all var(--transition-normal);
 }
 
 .education-content:hover,
 .skill-item:hover {
     transform: translateY(-4px);
-    border-color: var(--primary) !important;
-    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.15) !important;
+    border-color: var(--secondary) !important;
+    box-shadow: 0 12px 32px rgba(219, 39, 119, 0.15) !important;
 }
 
 /* Vibrant Text in Cards */
@@ -1948,4 +1987,218 @@ h2::before {
     height: 70%;
     background: currentColor;
     border-radius: 10px;
+}
+
+/* Animated Particles */
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-radius: 50%;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: particle-float 20s infinite ease-in-out;
+}
+
+@keyframes particle-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translate(100px, -100px);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-50px, -200px);
+        opacity: 0.2;
+    }
+
+    75% {
+        transform: translate(-100px, -100px);
+        opacity: 0.4;
+    }
+}
+
+/* Additional Floating Shapes */
+.floating-shape {
+    position: absolute;
+    opacity: 0.05;
+    animation: shape-float 25s infinite ease-in-out;
+}
+
+.floating-shape:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #9333ea, #a855f7);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: 10%;
+    left: 10%;
+}
+
+.floating-shape:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #7c3aed, #c084fc);
+    border-radius: 50%;
+    top: 60%;
+    right: 15%;
+    animation-delay: -8s;
+}
+
+@keyframes shape-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(50px, -50px) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-30px, 30px) rotate(240deg);
+    }
+}/* Animated Section Backgrounds */
+
+/* About Section - Subtle Violet Gradient Animation */
+.about {
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #ffffff 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+    position: relative;
+}
+
+/* Experience Section - Lighter Violet Animation */
+.experience {
+    background: linear-gradient(135deg, #ffffff 0%, #faf5ff 50%, #f8fafc 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 18s ease infinite;
+    position: relative;
+}
+
+/* Skills Section - Purple Tint Animation */
+.skills {
+    background: linear-gradient(135deg, #f8fafc 0%, #f5f3ff 50%, #ffffff 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 20s ease infinite;
+    position: relative;
+}
+
+/* Projects Section - Warm Violet Animation */
+.projects {
+    background: linear-gradient(135deg, #faf5ff 0%, #ffffff 50%, #f3e8ff 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 16s ease infinite;
+    position: relative;
+}
+
+/* Education Section - Cool Violet Animation */
+.education {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f7ff 50%, #faf5ff 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 19s ease infinite;
+    position: relative;
+}
+
+/* Contact Section - Deeper Violet */
+.contact {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #f3e8ff 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 17s ease infinite;
+    position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Orbs for Each Section */
+section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about::before {
+    background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+    top: -300px;
+    right: -200px;
+    animation: float-orb 25s ease-in-out infinite;
+}
+
+.experience::before {
+    background: radial-gradient(circle, #9333ea 0%, transparent 70%);
+    bottom: -250px;
+    left: -250px;
+    animation: float-orb 30s ease-in-out infinite;
+    animation-delay: -10s;
+}
+
+.skills::before {
+    background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+    top: -200px;
+    left: 10%;
+    animation: float-orb 28s ease-in-out infinite;
+    animation-delay: -5s;
+}
+
+.projects::before {
+    background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+    bottom: -300px;
+    right: -100px;
+    animation: float-orb 26s ease-in-out infinite;
+    animation-delay: -15s;
+}
+
+.education::before {
+    background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+    top: -250px;
+    right: 10%;
+    animation: float-orb 27s ease-in-out infinite;
+    animation-delay: -8s;
+}
+
+@keyframes float-orb {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+/* Ensure content is above animated backgrounds */
+section .container {
+    position: relative;
+    z-index: 1;
 }
