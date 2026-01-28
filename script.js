@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 100;
+    let typeSpeed = 99;
 
     function type() {
         const currentWord = words[wordIndex];
