@@ -15,7 +15,7 @@ Este guia explica como colocar seu site online gratuitamente usando o GitHub e G
 Como já inicializamos o Git localmente, abra o terminal na pasta do projeto e execute os comandos que o GitHub mostra na tela "…or push an existing repository from the command line":
 
 ```bash
-git remote add origin https://github.com/mlesouza/[NOME-DO-REPO].git
+git remote add origin https://github.com/mlesouza/mlesouza.github.io.git
 git branch -M main
 git push -u origin main
 ```
