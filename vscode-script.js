@@ -35,6 +35,7 @@ function playRetroBootSound() {
 // Super Mario Bros Theme using Web Audio API
 let marioMusicContext = null;
 let marioIsPlaying = false;
+let marioLoopTimeout = null;
 
 function playMarioTheme() {
     if (marioIsPlaying) {
@@ -44,48 +45,95 @@ function playMarioTheme() {
 
     marioMusicContext = new (window.AudioContext || window.webkitAudioContext)();
     marioIsPlaying = true;
-    const ctx = marioMusicContext;
-    const now = ctx.currentTime;
 
-    // Note frequencies
-    const E5 = 659.25, C5 = 523.25, G5 = 783.99, G4 = 392.00;
-    const E4 = 329.63, A4 = 440.00, B4 = 493.88, As4 = 466.16, D5 = 587.33;
+    function playMelody() {
+        if (!marioIsPlaying) return;
 
-    function note(freq, start, dur) {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.type = 'square';
-        osc.frequency.value = freq;
-        gain.gain.setValueAtTime(0, start);
-        gain.gain.linearRampToValueAtTime(0.12, start + 0.01);
-        gain.gain.exponentialRampToValueAtTime(0.01, start + dur);
-        osc.start(start);
-        osc.stop(start + dur);
+        const ctx = marioMusicContext;
+        const now = ctx.currentTime;
+
+        // Note frequencies (extended)
+        const E5 = 659.25, C5 = 523.25, G5 = 783.99, G4 = 392.00;
+        const E4 = 329.63, A4 = 440.00, B4 = 493.88, As4 = 466.16, D5 = 587.33;
+        const Fs5 = 739.99, Fs4 = 369.99, C4 = 261.63, D4 = 293.66;
+
+        function note(freq, start, dur) {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.type = 'square';
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0, start);
+            gain.gain.linearRampToValueAtTime(0.12, start + 0.01);
+            gain.gain.exponentialRampToValueAtTime(0.01, start + dur);
+            osc.start(start);
+            osc.stop(start + dur);
+        }
+
+        // Extended Mario theme melody (3x longer)
+        const n = 0.15;
+        let t = 0;
+
+        // Part 1 - Main theme
+        note(E5, now + t, n); t += n * 1.5;
+        note(E5, now + t, n); t += n * 1.5;
+        note(E5, now + t, n); t += n;
+        note(C5, now + t, n); t += n;
+        note(E5, now + t, n); t += n * 2;
+        note(G5, now + t, n * 2); t += n * 4;
+        note(G4, now + t, n * 2); t += n * 4;
+
+        // Part 2
+        note(C5, now + t, n); t += n * 2;
+        note(G4, now + t, n); t += n * 2;
+        note(E4, now + t, n); t += n * 2;
+        note(A4, now + t, n); t += n;
+        note(B4, now + t, n); t += n;
+        note(As4, now + t, n); t += n;
+        note(A4, now + t, n); t += n * 2;
+
+        // Part 3 - Extended
+        note(G4, now + t, n); t += n;
+        note(E5, now + t, n); t += n;
+        note(G5, now + t, n); t += n;
+        note(A4, now + t, n); t += n;
+        note(Fs5, now + t, n); t += n;
+        note(G5, now + t, n); t += n * 2;
+        note(E5, now + t, n); t += n;
+        note(C5, now + t, n); t += n;
+        note(D5, now + t, n); t += n;
+        note(B4, now + t, n); t += n * 2;
+
+        // Part 4 - Finale
+        note(C5, now + t, n); t += n * 2;
+        note(G4, now + t, n); t += n * 2;
+        note(E4, now + t, n); t += n * 2;
+        note(A4, now + t, n); t += n;
+        note(B4, now + t, n); t += n;
+        note(As4, now + t, n); t += n;
+        note(A4, now + t, n); t += n * 2;
+        note(G4, now + t, n); t += n;
+        note(E5, now + t, n); t += n;
+        note(G5, now + t, n); t += n;
+        note(A4, now + t, n); t += n;
+        note(Fs5, now + t, n); t += n;
+        note(G5, now + t, n); t += n * 2;
+        note(E5, now + t, n); t += n;
+        note(C5, now + t, n); t += n;
+        note(D5, now + t, n); t += n;
+        note(B4, now + t, n); t += n * 3;
+
+        // Loop after melody completes (~15 seconds)
+        const loopDelay = t * 1000 + 1000;
+        marioLoopTimeout = setTimeout(() => {
+            if (marioIsPlaying) {
+                playMelody(); // Loop!
+            }
+        }, loopDelay);
     }
 
-    // Mario theme melody
-    const n = 0.15;
-    note(E5, now, n);
-    note(E5, now + n * 1.5, n);
-    note(E5, now + n * 3, n);
-    note(C5, now + n * 4, n);
-    note(E5, now + n * 5, n);
-    note(G5, now + n * 7, n * 2);
-    note(G4, now + n * 11, n * 2);
-    note(C5, now + n * 15, n);
-    note(G4, now + n * 17, n);
-    note(E4, now + n * 19, n);
-    note(A4, now + n * 21, n);
-    note(B4, now + n * 23, n);
-    note(As4, now + n * 24, n);
-    note(A4, now + n * 25, n);
-
-    setTimeout(() => {
-        marioIsPlaying = false;
-        document.getElementById('musicBtn')?.classList.remove('playing');
-    }, 5000);
+    playMelody(); // Start
 }
 
 function stopMarioTheme() {
@@ -93,6 +141,10 @@ function stopMarioTheme() {
         marioMusicContext.close();
         marioMusicContext = null;
         marioIsPlaying = false;
+    }
+    if (marioLoopTimeout) {
+        clearTimeout(marioLoopTimeout);
+        marioLoopTimeout = null;
     }
 }
 

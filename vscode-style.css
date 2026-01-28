@@ -130,6 +130,134 @@ body.theme-dracula {
     --font-ui: 'Segoe UI', 'Inter', sans-serif;
 }
 
+/* Theme 5: Solarized Dark */
+body.theme-solarized {
+    --vscode-bg: #002b36;
+    --vscode-sidebar: #073642;
+    --vscode-editor: #002b36;
+    --vscode-text: #839496;
+    --vscode-text-dim: #586e75;
+    --vscode-border: #073642;
+    --vscode-active: #094454;
+    --vscode-hover: #0f4050;
+
+    --keyword: #268bd2;
+    --string: #2aa198;
+    --variable: #b58900;
+    --function: #859900;
+    --comment: #586e75;
+    --property: #268bd2;
+    --number: #d33682;
+    --purple: #6c71c4;
+
+    /* Loader colors */
+    --loader-bg-start: #002b36;
+    --loader-bg-end: #073642;
+    --loader-primary: #268bd2;
+    --loader-secondary: #2aa198;
+    --loader-tertiary: #d33682;
+    --loader-text: #268bd2;
+
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --font-ui: 'Segoe UI', 'Inter', sans-serif;
+}
+
+/* Theme 6: Nord */
+body.theme-nord {
+    --vscode-bg: #2e3440;
+    --vscode-sidebar: #3b4252;
+    --vscode-editor: #2e3440;
+    --vscode-text: #d8dee9;
+    --vscode-text-dim: #4c566a;
+    --vscode-border: #3b4252;
+    --vscode-active: #434c5e;
+    --vscode-hover: #3f4859;
+
+    --keyword: #81a1c1;
+    --string: #a3be8c;
+    --variable: #d8dee9;
+    --function: #88c0d0;
+    --comment: #616e88;
+    --property: #8fbcbb;
+    --number: #b48ead;
+    --purple: #b48ead;
+
+    /* Loader colors */
+    --loader-bg-start: #2e3440;
+    --loader-bg-end: #3b4252;
+    --loader-primary: #88c0d0;
+    --loader-secondary: #81a1c1;
+    --loader-tertiary: #b48ead;
+    --loader-text: #88c0d0;
+
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --font-ui: 'Segoe UI', 'Inter', sans-serif;
+}
+
+/* Theme 7: One Dark */
+body.theme-onedark {
+    --vscode-bg: #282c34;
+    --vscode-sidebar: #21252b;
+    --vscode-editor: #282c34;
+    --vscode-text: #abb2bf;
+    --vscode-text-dim: #5c6370;
+    --vscode-border: #181a1f;
+    --vscode-active: #2c313a;
+    --vscode-hover: #2c313c;
+
+    --keyword: #c678dd;
+    --string: #98c379;
+    --variable: #e06c75;
+    --function: #61afef;
+    --comment: #5c6370;
+    --property: #56b6c2;
+    --number: #d19a66;
+    --purple: #c678dd;
+
+    /* Loader colors */
+    --loader-bg-start: #282c34;
+    --loader-bg-end: #21252b;
+    --loader-primary: #61afef;
+    --loader-secondary: #c678dd;
+    --loader-tertiary: #e06c75;
+    --loader-text: #61afef;
+
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --font-ui: 'Segoe UI', 'Inter', sans-serif;
+}
+
+/* Theme 8: GitHub Dark */
+body.theme-github {
+    --vscode-bg: #0d1117;
+    --vscode-sidebar: #161b22;
+    --vscode-editor: #0d1117;
+    --vscode-text: #c9d1d9;
+    --vscode-text-dim: #8b949e;
+    --vscode-border: #30363d;
+    --vscode-active: #21262d;
+    --vscode-hover: #1c2128;
+
+    --keyword: #ff7b72;
+    --string: #a5d6ff;
+    --variable: #ffa657;
+    --function: #d2a8ff;
+    --comment: #8b949e;
+    --property: #79c0ff;
+    --number: #79c0ff;
+    --purple: #d2a8ff;
+
+    /* Loader colors */
+    --loader-bg-start: #0d1117;
+    --loader-bg-end: #161b22;
+    --loader-primary: #58a6ff;
+    --loader-secondary: #f778ba;
+    --loader-tertiary: #d2a8ff;
+    --loader-text: #58a6ff;
+
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --font-ui: 'Segoe UI', 'Inter', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
