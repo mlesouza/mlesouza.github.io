@@ -1,6 +1,8 @@
-/* VS Code Portfolio - Retro 90s Theme */
+/* VS Code Portfolio - Multi-Theme System */
 
-:root {
+/* Default Theme: Retro 90s */
+:root,
+body.theme-retro {
     /* Retro 90s Neon Colors */
     --vscode-bg: #0a0e27;
     --vscode-sidebar: #0f1228;
@@ -20,8 +22,112 @@
     --number: #ff8800;
     --purple: #ff00ff;
 
+    /* Loader colors (adapta ao tema) */
+    --loader-bg-start: #0a0e27;
+    --loader-bg-end: #1a1e3a;
+    --loader-primary: #00ff00;
+    --loader-secondary: #0080ff;
+    --loader-tertiary: #ff00ff;
+    --loader-text: #569cd6;
+
     --font-mono: 'Fira Code', 'Courier New', 'Consolas', monospace;
     --font-ui: 'Fira Code', 'Courier New', monospace;
+}
+
+/* Theme 2: VS Code Dark+ (Classic)  */
+body.theme-dark {
+    --vscode-bg: #1e1e1e;
+    --vscode-sidebar: #252526;
+    --vscode-editor: #1e1e1e;
+    --vscode-text: #d4d4d4;
+    --vscode-text-dim: #858585;
+    --vscode-border: #3e3e42;
+    --vscode-active: #37373d;
+    --vscode-hover: #2a2d2e;
+
+    --keyword: #569cd6;
+    --string: #ce9178;
+    --variable: #9cdcfe;
+    --function: #dcdcaa;
+    --comment: #6a9955;
+    --property: #9cdcfe;
+    --number: #b5cea8;
+    --purple: #c586c0;
+
+    /* Loader colors */
+    --loader-bg-start: #1e1e1e;
+    --loader-bg-end: #252526;
+    --loader-primary: #569cd6;
+    --loader-secondary: #4ec9b0;
+    --loader-tertiary: #c586c0;
+    --loader-text: #569cd6;
+
+    --font-mono: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    --font-ui: 'Segoe UI', 'Inter', -apple-system, system-ui, sans-serif;
+}
+
+/* Theme 3: Monokai */
+body.theme-monokai {
+    --vscode-bg: #272822;
+    --vscode-sidebar: #1e1f1c;
+    --vscode-editor: #272822;
+    --vscode-text: #f8f8f2;
+    --vscode-text-dim: #75715e;
+    --vscode-border: #3e3d32;
+    --vscode-active: #414339;
+    --vscode-hover: #49483e;
+
+    --keyword: #66d9ef;
+    --string: #e6db74;
+    --variable: #fd971f;
+    --function: #a6e22e;
+    --comment: #75715e;
+    --property: #a6e22e;
+    --number: #ae81ff;
+    --purple: #ae81ff;
+
+    /* Loader colors */
+    --loader-bg-start: #272822;
+    --loader-bg-end: #1e1f1c;
+    --loader-primary: #a6e22e;
+    --loader-secondary: #66d9ef;
+    --loader-tertiary: #ae81ff;
+    --loader-text: #66d9ef;
+
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --font-ui: 'Segoe UI', 'Inter', sans-serif;
+}
+
+/* Theme 4: Dracula */
+body.theme-dracula {
+    --vscode-bg: #282a36;
+    --vscode-sidebar: #21222c;
+    --vscode-editor: #282a36;
+    --vscode-text: #f8f8f2;
+    --vscode-text-dim: #6272a4;
+    --vscode-border: #44475a;
+    --vscode-active: #44475a;
+    --vscode-hover: #343746;
+
+    --keyword: #8be9fd;
+    --string: #f1fa8c;
+    --variable: #50fa7b;
+    --function: #50fa7b;
+    --comment: #6272a4;
+    --property: #50fa7b;
+    --number: #bd93f9;
+    --purple: #ff79c6;
+
+    /* Loader colors */
+    --loader-bg-start: #282a36;
+    --loader-bg-end: #21222c;
+    --loader-primary: #50fa7b;
+    --loader-secondary: #8be9fd;
+    --loader-tertiary: #ff79c6;
+    --loader-text: #8be9fd;
+
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --font-ui: 'Segoe UI', 'Inter', sans-serif;
 }
 
 * {
@@ -71,7 +177,7 @@ body {
 .loader-wrapper {
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1e3a 100%);
+    background: linear-gradient(135deg, var(--loader-bg-start) 0%, var(--loader-bg-end) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,25 +203,25 @@ body {
     width: 60px;
     height: 60px;
     border: 4px solid rgba(86, 156, 214, 0.1);
-    border-top-color: #00ff00;
-    border-right-color: #0080ff;
-    border-bottom-color: #ff00ff;
+    border-top-color: var(--loader-primary);
+    border-right-color: var(--loader-secondary);
+    border-bottom-color: var(--loader-tertiary);
     border-radius: 50%;
     animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
     box-shadow:
-        0 0 20px rgba(0, 255, 0, 0.3),
-        0 0 40px rgba(0, 128, 255, 0.2),
-        inset 0 0 20px rgba(255, 0, 255, 0.1);
+        0 0 20px var(--loader-primary),
+        0 0 40px var(--loader-secondary),
+        inset 0 0 20px var(--loader-tertiary);
     margin-bottom: 2rem;
 }
 
 .loader p {
-    font-family: 'Fira Code', monospace;
+    font-family: var(--font-mono);
     font-size: 1.1rem;
-    color: #00ff00;
+    color: var(--loader-text);
     text-shadow:
-        0 0 10px rgba(0, 255, 0, 0.8),
-        0 0 20px rgba(0, 255, 0, 0.5);
+        0 0 10px var(--loader-text),
+        0 0 20px var(--loader-text);
     animation: blink 1.5s steps(2) infinite, glow 2s ease-in-out infinite;
     letter-spacing: 2px;
 }
@@ -260,6 +366,65 @@ body {
     transform: translateX(-50%);
     font-size: 13px;
     color: var(--vscode-text-dim);
+}
+
+/* Theme Selector & Music Button */
+.window-menu {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.theme-selector {
+    background: var(--vscode-hover);
+    color: var(--vscode-text);
+    border: 1px solid var(--vscode-border);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.theme-selector:hover {
+    background: var(--vscode-active);
+    border-color: var(--keyword);
+}
+
+.music-btn {
+    background: var(--vscode-hover);
+    color: var(--vscode-text);
+    border: 1px solid var(--vscode-border);
+    border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.music-btn:hover {
+    background: var(--vscode-active);
+    border-color: var(--string);
+}
+
+.music-btn.playing {
+    background: var(--vscode-active);
+    border-color: var(--function);
+    animation: pulse-music 1s ease-in-out infinite;
+}
+
+@keyframes pulse-music {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 /* Tab Bar */

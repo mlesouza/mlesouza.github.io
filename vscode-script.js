@@ -32,8 +32,93 @@ function playRetroBootSound() {
     beep(1200, now + 0.7, 0.2);    // Success beep
 }
 
+// Super Mario Bros Theme using Web Audio API
+let marioMusicContext = null;
+let marioIsPlaying = false;
+
+function playMarioTheme() {
+    if (marioIsPlaying) {
+        stopMarioTheme();
+        return;
+    }
+
+    marioMusicContext = new (window.AudioContext || window.webkitAudioContext)();
+    marioIsPlaying = true;
+    const ctx = marioMusicContext;
+    const now = ctx.currentTime;
+
+    // Note frequencies
+    const E5 = 659.25, C5 = 523.25, G5 = 783.99, G4 = 392.00;
+    const E4 = 329.63, A4 = 440.00, B4 = 493.88, As4 = 466.16, D5 = 587.33;
+
+    function note(freq, start, dur) {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.type = 'square';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0, start);
+        gain.gain.linearRampToValueAtTime(0.12, start + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.01, start + dur);
+        osc.start(start);
+        osc.stop(start + dur);
+    }
+
+    // Mario theme melody
+    const n = 0.15;
+    note(E5, now, n);
+    note(E5, now + n * 1.5, n);
+    note(E5, now + n * 3, n);
+    note(C5, now + n * 4, n);
+    note(E5, now + n * 5, n);
+    note(G5, now + n * 7, n * 2);
+    note(G4, now + n * 11, n * 2);
+    note(C5, now + n * 15, n);
+    note(G4, now + n * 17, n);
+    note(E4, now + n * 19, n);
+    note(A4, now + n * 21, n);
+    note(B4, now + n * 23, n);
+    note(As4, now + n * 24, n);
+    note(A4, now + n * 25, n);
+
+    setTimeout(() => {
+        marioIsPlaying = false;
+        document.getElementById('musicBtn')?.classList.remove('playing');
+    }, 5000);
+}
+
+function stopMarioTheme() {
+    if (marioMusicContext) {
+        marioMusicContext.close();
+        marioMusicContext = null;
+        marioIsPlaying = false;
+    }
+}
+
+//  Theme System
+function setTheme(themeName) {
+    console.log('[THEME] Mudando para:', themeName);
+    document.body.className = themeName;
+    localStorage.setItem('portfolio-theme', themeName);
+}
+
+function loadTheme() {
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'theme-retro';
+    console.log('[THEME] Carregando tema salvo:', savedTheme);
+    document.body.className = savedTheme;
+    const selector = document.getElementById('themeSelector');
+    if (selector) {
+        selector.value = savedTheme;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('[BOOT] Portfolio iniciando...');
+
+    // Load saved theme immediately
+    loadTheme();
+
     let soundPlayed = false;
 
     // Sound button click handler
@@ -57,15 +142,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    }
 
-        // Try to autoplay sound
-        setTimeout(() => {
-            console.log('[SOUND] Tentando autoplay...');
-            if (!soundPlayed) {
-                console.log('[SOUND] Auto-clicando botão...');
-                soundBtn.click();
+    // Theme selector
+    const themeSelector = document.getElementById('themeSelector');
+    if (themeSelector) {
+        themeSelector.addEventListener('change', (e) => {
+            setTheme(e.target.value);
+        });
+    }
+
+    // Music button
+    const musicBtn = document.getElementById('musicBtn');
+    if (musicBtn) {
+        musicBtn.addEventListener('click', () => {
+            if (!marioIsPlaying) {
+                playMarioTheme();
+                musicBtn.classList.add('playing');
+                musicBtn.textContent = '⏸️ Pausar';
+            } else {
+                stopMarioTheme();
+                musicBtn.classList.remove('playing');
+                musicBtn.textContent = '🎵 Música';
             }
-        }, 500);
+        });
     }
 
     // Hide loader
