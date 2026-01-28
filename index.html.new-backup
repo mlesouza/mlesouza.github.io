@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | [Marcelo Leonardo de Souza]</title>
+    <meta name="description" content="Professional portfolio of [Your Name]">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p style="margin-top: 1.5rem; color: var(--primary); font-weight: 600;">Carregando...</p>
+        </div>
+    </div>
+
+    <!-- Floating Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://github.com/mlesouza" target="_blank" class="social-link" aria-label="GitHub">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/mlesouza95" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+        </a>
+        <a href="mailto:mlesouza95@gmail.com" class="social-link" aria-label="Email">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+            </svg>
+        </a>
+        <div class="social-line"></div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div id="particles-js"></div>
+
+    <!-- Background Grid -->
+    <div class="grid-overlay"></div>
+
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="scroll-progress"></div>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">Marcelo Souza.</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#experience">Experiência</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#education">Educação</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section - Code Editor Window -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <!-- VS Code Window -->
+                <div class="code-window">
+                    <!-- Window Header -->
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <span class="control-btn close"></span>
+                            <span class="control-btn minimize"></span>
+                            <span class="control-btn maximize"></span>
+                        </div>
+                        <div class="window-title">marcelo-souza.dev</div>
+                        <div class="window-actions"></div>
+                    </div>
+
+                    <!-- Editor Content -->
+                    <div class="editor-container">
+                        <!-- Sidebar -->
+                        <div class="editor-sidebar">
+                            <div class="sidebar-icon active" title="Explorer">📁</div>
+                            <div class="sidebar-icon" title="Search">🔍</div>
+                            <div class="sidebar-icon" title="Git">🔀</div>
+                            <div class="sidebar-icon" title="Extensions">📦</div>
+                        </div>
+
+                        <!-- Code Area -->
+                        <div class="code-content">
+                            <!-- Line Numbers -->
+                            <div class="line-numbers">
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <span>6</span>
+                                <span>7</span>
+                                <span>8</span>
+                                <span>9</span>
+                                <span>10</span>
+                            </div>
+
+                            <!-- Code -->
+                            <div class="code-area">
+                                <div class="code-line"><span class="keyword">const</span> <span
+                                        class="variable">developer</span> = {</div>
+                                <div class="code-line"> <span class="property">name</span>: <span
+                                        class="string">"Marcelo Leonardo de Souza"</span>,</div>
+                                <div class="code-line"> <span class="property">role</span>: <span class="string">"Senior
+                                        Frontend Developer"</span>,</div>
+                                <div class="code-line"> <span class="property">location</span>: <span
+                                        class="string">"São Paulo, Brasil"</span>,</div>
+                                <div class="code-line"> <span class="property">experience</span>: <span
+                                        class="string">"8+ anos"</span>,</div>
+                                <div class="code-line"> <span class="property">skills</span>: [<span
+                                        class="string">"React"</span>, <span class="string">"TypeScript"</span>, <span
+                                        class="string">"Node.js"</span>]</div>
+                                <div class="code-line">};</div>
+                                <div class="code-line"></div>
+                                <div class="code-line"><span class="variable">developer</span>.<span
+                                        class="function">build</span>();</div>
+                                <div class="code-line"><span class="comment">// 👋 Vamos construir algo incrível
+                                        juntos!</span><span class="cursor">|</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terminal -->
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span>TERMINAL</span>
+                            <span class="terminal-close">×</span>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line"><span class="prompt">$</span> npm run dev</div>
+                            <div class="terminal-line"><span class="output">✓ Portfolio pronto em</span> <span
+                                    class="link">https://mlesouza.github.io</span></div>
+                            <div class="terminal-line terminal-cursor">█</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                    <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Sou <strong>Senior Frontend Developer</strong> com <strong>8+ anos</strong> construindo e
+                            evoluindo aplicações <strong>web e mobile</strong> em ambientes de produto, com foco em
+                            <strong>arquitetura</strong>, <strong>qualidade</strong> e <strong>performance</strong>.
+                        </p>
+                        <p>Atualmente atuo na <strong>Linx</strong> como <strong>Especialista Front-End</strong>,
+                            ajudando a evoluir e sustentar sistemas, definindo padrões de codificação, melhorando a base
+                            técnica e fortalecendo a esteira de entrega (<strong>CI/CD com GitHub Actions</strong>) e
+                            entrega de assets com <strong>Nginx</strong>.</p>
+                        <ul class="stats-list">
+                            <li>
+                                <span class="stat-number">8+</span>
+                                <span class="stat-label">Anos de Experiência</span>
+                            </li>
+                            <li>
+                                <span class="stat-number">Senior</span>
+                                <span class="stat-label">Frontend Engineer</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <div class="container">
+                <h2>Experiência Profissional</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jul/2024 - Atual</div>
+                        <div class="timeline-content">
+                            <h3>Especialista Front-End</h3>
+                            <h4>Linx</h4>
+                            <p>Evolução e sustentação de sistemas front-end com foco em qualidade e manutenibilidade.
+                                Definição e disseminação de padrões (componentização, organização e revisão de PR).
+                                Migração de legado para Angular 19+ (standalone, build e boas práticas).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Ago/2022 - Jul/2024</div>
+                        <div class="timeline-content">
+                            <h3>Desenvolvedor Front-End Sênior</h3>
+                            <h4>Cadmus Soluções em TI</h4>
+                            <p>Sustentação e evolução de sistema legado em AngularJS com estabilidade/performance.
+                                Melhorias de UI/UX e responsividade. Desenvolvimento mobile em React Native e
+                                integrações com serviços internos.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Abr/2021 - Ago/2022</div>
+                        <div class="timeline-content">
+                            <h3>Desenvolvedor Front-End Pleno</h3>
+                            <h4>Capgemini</h4>
+                            <p>Evolução de sistema para cliente bancário. Implementação de testes unitários e TDD
+                                (aumento significativo de cobertura).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Set/2019 - Abr/2021</div>
+                        <div class="timeline-content">
+                            <h3>GeneXus/Angular Developer</h3>
+                            <h4>Univali</h4>
+                            <p>Evolução de sistemas acadêmicos (GeneXus) e módulos front-end com Angular. Integrações
+                                com APIs e banco de dados (Oracle/SQL).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Out/2018 - Set/2019</div>
+                        <div class="timeline-content">
+                            <h3>Frontend Developer</h3>
+                            <h4>QUAY Sistemas e Portais</h4>
+                            <p>Interfaces responsivas para aplicação white-label, portais e sistemas internos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>Stack Principal & Ferramentas</h2>
+                <div class="skills-grid icons-grid">
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
+                            alt="Angular">
+                        <span>Angular</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                            alt="React">
+                        <span>React</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                            alt="TypeScript">
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Sass">
+                        <span>Sass</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                            alt="Tailwind">
+                        <span>Tailwind</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                            alt="Node.js">
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
+                            alt="NestJS">
+                        <span>NestJS</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                            alt="Docker">
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
+                            alt="Nginx">
+                        <span>Nginx</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                            alt="PostgreSQL">
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                            alt="MongoDB">
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
+                            alt="Oracle">
+                        <span>Oracle</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="github-stats" class="projects"> <!-- Reusing projects class for spacing -->
+            <div class="container">
+                <h2>GitHub Stats</h2>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mlesouza&layout=compact&title_color=7c3aed&icon_color=db2777&text_color=475569&bg_color=ffffff&border_color=e2e8f0&hide_border=false"
+                        alt="Top Languages" />
+                    <img src="https://github-readme-stats.vercel.app/api?username=mlesouza&show_icons=true&title_color=7c3aed&icon_color=db2777&text_color=475569&bg_color=ffffff&border_color=e2e8f0&hide_border=false"
+                        alt="GitHub Stats" />
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Projetos</h2>
+                <p class="section-subtitle">Timeline de Projetos Desenvolvidos</p>
+                <div class="projects-timeline">
+                    <!-- 2025-2026 -->
+                    <div class="project-card" data-company="linx">
+                        <div class="project-icon">L</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2025 – 2026</div>
+                        <h3>Instore (OMS • Refatoração / Modernização)</h3>
+                        <div class="project-company">Linx</div>
+                        <div class="project-stack">
+                            <span class="tag">Angular 19</span>
+                            <span class="tag">Arquitetura</span>
+                            <span class="tag">Componentização</span>
+                        </div>
+                        <p>Refatoração completa do <strong>OMS Instore</strong>, migrando de <strong>AngularJS → Angular
+                                19</strong>. Reestruturação visando manutenibilidade, escalabilidade e consistência
+                            técnica, modernizando a base seguindo melhores práticas do ecossistema Angular.</p>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="project-card" data-company="linx">
+                        <div class="project-icon">L</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2024</div>
+                        <h3>Instore Responsivo (OMS)</h3>
+                        <div class="project-company">Linx</div>
+                        <div class="project-stack">
+                            <span class="tag">Responsivo</span>
+                            <span class="tag">UX</span>
+                            <span class="tag">Device Features</span>
+                        </div>
+                        <p>Revitalização do <strong>OMS Instore</strong> com foco em <strong>responsividade</strong> e
+                            modernização da experiência. Implementação de funcionalidades voltadas a UX, incluindo uso
+                            de <strong>câmera</strong>, <strong>notificações</strong> e melhorias gerais de usabilidade
+                            e fluxo.</p>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="project-card" data-company="linx">
+                        <div class="project-icon">L</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2023</div>
+                        <h3>Instore Mobile (OMS)</h3>
+                        <div class="project-company">Linx</div>
+                        <div class="project-stack">
+                            <span class="tag">React Native</span>
+                            <span class="tag">BFF</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                        <p>Desenvolvimento de uma versão <strong>mobile</strong> do <strong>OMS Instore</strong> baseada
+                            no sistema legado. Criação e manutenção do <strong>BFF</strong>, suportando a comunicação
+                            entre o app e serviços internos. Evolução contínua do app com foco em estabilidade e
+                            entregas incrementais.</p>
+                    </div>
+
+                    <!-- 2022-2023 -->
+                    <div class="project-card" data-company="linx">
+                        <div class="project-icon">L</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2022 – 2023</div>
+                        <h3>Instore (OMS • Legado)</h3>
+                        <div class="project-company">Linx</div>
+                        <div class="project-stack">
+                            <span class="tag">AngularJS</span>
+                            <span class="tag">Manutenção</span>
+                        </div>
+                        <p>Manutenção e evolução do <strong>OMS Instore</strong> (projeto legado em AngularJS).
+                            Correções, melhorias incrementais e sustentação contínua do sistema. Implementação de novas
+                            features e ajustes de comportamento conforme demandas do produto.</p>
+                    </div>
+
+                    <!-- 2021-2022 -->
+                    <div class="project-card" data-company="bb">
+                        <div class="project-icon">BB</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2021 – 2022</div>
+                        <h3>Sistema WorkFlow</h3>
+                        <div class="project-company">Banco do Brasil</div>
+                        <div class="project-stack">
+                            <span class="tag">Workflow</span>
+                            <span class="tag">Enterprise</span>
+                        </div>
+                        <p>Manutenção e evolução de sistema interno de workflow. Implementação de melhorias e suporte às
+                            rotinas do negócio.</p>
+                    </div>
+
+                    <!-- 2019-2021 SIP -->
+                    <div class="project-card" data-company="univali">
+                        <div class="project-icon">U</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2019 – 2021</div>
+                        <h3>SIP — Sistema Interno de Patrimônios</h3>
+                        <div class="project-company">Univali</div>
+                        <div class="project-stack">
+                            <span class="tag">Gestão</span>
+                            <span class="tag">Patrimônio</span>
+                        </div>
+                        <p>Desenvolvimento e manutenção de sistema para <strong>controle de patrimônios</strong>.
+                            Evolução de features e suporte contínuo do sistema.</p>
+                    </div>
+
+                    <!-- 2019-2021 Acadêmico -->
+                    <div class="project-card" data-company="univali">
+                        <div class="project-icon">U</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2019 – 2021</div>
+                        <h3>Sistema Acadêmico</h3>
+                        <div class="project-company">Univali</div>
+                        <div class="project-stack">
+                            <span class="tag">Educação</span>
+                            <span class="tag">Academia</span>
+                        </div>
+                        <p>Manutenção e criação de novas funcionalidades para o sistema acadêmico. Evolução contínua
+                            conforme necessidades de alunos e professores.</p>
+                    </div>
+
+                    <!-- 2017-2019 -->
+                    <div class="project-card" data-company="quay">
+                        <div class="project-icon">Q</div>
+                        <div class="timeline-dot"></div>
+                        <div class="project-year">2017 – 2019</div>
+                        <h3>Sistema Orçamentário</h3>
+                        <div class="project-company">Quay</div>
+                        <div class="project-stack">
+                            <span class="tag">Financeiro</span>
+                            <span class="tag">Planejamento</span>
+                            <span class="tag">Energia</span>
+                        </div>
+                        <p>Criação e manutenção de sistema de <strong>planejamento orçamentário</strong>. Atuação em
+                            contexto de empresas do setor de energia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <div class="container">
+                <h2>Formação Acadêmica</h2>
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="education-content">
+                            <h3>Mestrado em Ciências da Computação</h3>
+                            <div class="education-institution">Universidade do Vale do Itajaí (Univali)</div>
+                            <div class="education-focus">
+                                <span class="focus-tag">Machine Learning</span>
+                                <span class="focus-tag">Inteligência Artificial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="education-content">
+                            <h3>Especialização em Big Data</h3>
+                            <div class="education-institution">Universidade do Vale do Itajaí (Univali)</div>
+                            <div class="education-focus">
+                                <span class="focus-tag">Big Data</span>
+                                <span class="focus-tag">Data Science</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item highlight">
+                        <div class="education-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="education-content">
+                            <h3>Bacharelado em Ciência da Computação</h3>
+                            <div class="education-institution">Universidade do Vale do Itajaí (Univali)</div>
+                            <div class="education-highlight">
+                                <strong>TCC:</strong> Simulador de Estrelas de Quarks (MIT Bag Model)
+                            </div>
+                            <p class="education-description">Trabalho de Conclusão de Curso focado em astrofísica
+                                computacional, desenvolvendo simulações de estruturas estelares exóticas usando o modelo
+                                de MIT Bag para quarks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <h2>Contato</h2>
+                    <p class="contact-text">Interessado em trabalhar juntos? Entre em contato!</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="mailto:mlesouza95@gmail.com" class="btn btn-primary">
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/mlesouza95" target="_blank" class="btn btn-outline">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Marcelo Souza. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
