@@ -2126,4 +2126,268 @@ section .container {
 
 .project-card:hover .project-icon {
     opacity: 0.05;
+}/* ===================================
+   VS CODE EDITOR WINDOW STYLES
+   =================================== */
+
+/* Code Window Container */
+.code-window {
+    background: var(--editor-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+/* Window Header */
+.window-header {
+    background: var(--editor-header);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.control-btn.close {
+    background: #ff5f56;
+}
+
+.control-btn.minimize {
+    background: #ffbd2e;
+}
+
+.control-btn.maximize {
+    background: #27c93f;
+}
+
+.window-title {
+    color: var(--editor-line-number);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Editor Container */
+.editor-container {
+    display: flex;
+    min-height: 400px;
+}
+
+/* Sidebar */
+.editor-sidebar {
+    background: var(--editor-sidebar);
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1.5rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-icon {
+    font-size: 1.25rem;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.sidebar-icon:hover,
+.sidebar-icon.active {
+    opacity: 1;
+}
+
+/* Code Content */
+.code-content {
+    flex: 1;
+    display: flex;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Line Numbers */
+.line-numbers {
+    background: var(--editor-bg);
+    color: var(--editor-line-number);
+    padding: 1rem 0.75rem;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    min-width: 50px;
+}
+
+.line-numbers span {
+    display: block;
+}
+
+/* Code Area */
+.code-area {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    color: var(--syntax-text);
+    overflow-x: auto;
+}
+
+.code-line {
+    white-space: pre;
+}
+
+/* Syntax Highlighting */
+.keyword {
+    color: var(--syntax-keyword);
+    font-weight: 600;
+}
+
+.string {
+    color: var(--syntax-string);
+}
+
+.function {
+    color: var(--syntax-function);
+}
+
+.variable {
+    color: var(--syntax-variable);
+}
+
+.property {
+    color: var(--syntax-property);
+}
+
+.comment {
+    color: var(--syntax-comment);
+    font-style: italic;
+}
+
+/* Cursor Animation */
+.cursor {
+    color: var(--syntax-text);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    50.1%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Terminal */
+.terminal {
+    background: var(--editor-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--font-mono);
+}
+
+.terminal-header {
+    background: var(--editor-header);
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    color: var(--editor-line-number);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.terminal-close {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.terminal-close:hover {
+    opacity: 1;
+}
+
+.terminal-content {
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+    color: var(--syntax-text);
+}
+
+.terminal-line {
+    margin-bottom: 0.25rem;
+}
+
+.prompt {
+    color: #4ec9b0;
+    margin-right: 0.5rem;
+}
+
+.output {
+    color: var(--syntax-comment);
+}
+
+.link {
+    color: var(--syntax-keyword);
+    text-decoration: underline;
+}
+
+.terminal-cursor {
+    color: var(--syntax-text);
+    animation: blink 1s step-end infinite;
+}
+
+/* Hero Actions */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .code-window {
+        border-radius: 8px;
+    }
+
+    .editor-container {
+        min-height: 300px;
+    }
+
+    .editor-sidebar {
+        width: 40px;
+        padding: 0.75rem 0;
+    }
+
+    .sidebar-icon {
+        font-size: 1rem;
+    }
+
+    .code-content {
+        font-size: 0.75rem;
+    }
+
+    .terminal-content {
+        font-size: 0.75rem;
+    }
+
+    .line-numbers {
+        min-width: 40px;
+        padding: 1rem 0.5rem;
+    }
 }

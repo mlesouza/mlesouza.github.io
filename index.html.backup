@@ -8,9 +8,7 @@
     <meta name="description" content="Professional portfolio of [Your Name]">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -88,94 +86,23 @@
     </header>
 
     <main>
-        <!-- Hero Section - Code Editor Window -->
         <section id="hero" class="hero">
             <div class="container">
-                <!-- VS Code Window -->
-                <div class="code-window">
-                    <!-- Window Header -->
-                    <div class="window-header">
-                        <div class="window-controls">
-                            <span class="control-btn close"></span>
-                            <span class="control-btn minimize"></span>
-                            <span class="control-btn maximize"></span>
-                        </div>
-                        <div class="window-title">marcelo-souza.dev</div>
-                        <div class="window-actions"></div>
+                <div class="hero-content">
+                    <p class="eyebrow reveal-text">Olá, eu sou o</p>
+                    <h1 class="reveal-text">Marcelo Souza</h1>
+                    <p class="subtitle reveal-text">Senior Frontend Engineer • <span class="typing-text"></span><span
+                            class="cursor">|</span></p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary magnetic-btn">Entre em Contato</a>
+                        <a href="https://github.com/mlesouza" target="_blank"
+                            class="btn btn-outline magnetic-btn">GitHub</a>
+                        <a href="https://www.linkedin.com/in/mlesouza95" target="_blank"
+                            class="btn btn-outline magnetic-btn">LinkedIn</a>
                     </div>
-
-                    <!-- Editor Content -->
-                    <div class="editor-container">
-                        <!-- Sidebar -->
-                        <div class="editor-sidebar">
-                            <div class="sidebar-icon active" title="Explorer">📁</div>
-                            <div class="sidebar-icon" title="Search">🔍</div>
-                            <div class="sidebar-icon" title="Git">🔀</div>
-                            <div class="sidebar-icon" title="Extensions">📦</div>
-                        </div>
-
-                        <!-- Code Area -->
-                        <div class="code-content">
-                            <!-- Line Numbers -->
-                            <div class="line-numbers">
-                                <span>1</span>
-                                <span>2</span>
-                                <span>3</span>
-                                <span>4</span>
-                                <span>5</span>
-                                <span>6</span>
-                                <span>7</span>
-                                <span>8</span>
-                                <span>9</span>
-                                <span>10</span>
-                            </div>
-
-                            <!-- Code -->
-                            <div class="code-area">
-                                <div class="code-line"><span class="keyword">const</span> <span
-                                        class="variable">developer</span> = {</div>
-                                <div class="code-line"> <span class="property">name</span>: <span
-                                        class="string">"Marcelo Leonardo de Souza"</span>,</div>
-                                <div class="code-line"> <span class="property">role</span>: <span class="string">"Senior
-                                        Frontend Developer"</span>,</div>
-                                <div class="code-line"> <span class="property">location</span>: <span
-                                        class="string">"São Paulo, Brasil"</span>,</div>
-                                <div class="code-line"> <span class="property">experience</span>: <span
-                                        class="string">"8+ anos"</span>,</div>
-                                <div class="code-line"> <span class="property">skills</span>: [<span
-                                        class="string">"React"</span>, <span class="string">"TypeScript"</span>, <span
-                                        class="string">"Node.js"</span>]</div>
-                                <div class="code-line">};</div>
-                                <div class="code-line"></div>
-                                <div class="code-line"><span class="variable">developer</span>.<span
-                                        class="function">build</span>();</div>
-                                <div class="code-line"><span class="comment">// 👋 Vamos construir algo incrível
-                                        juntos!</span><span class="cursor">|</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Terminal -->
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <span>TERMINAL</span>
-                            <span class="terminal-close">×</span>
-                        </div>
-                        <div class="terminal-content">
-                            <div class="terminal-line"><span class="prompt">$</span> npm run dev</div>
-                            <div class="terminal-line"><span class="output">✓ Portfolio pronto em</span> <span
-                                    class="link">https://mlesouza.github.io</span></div>
-                            <div class="terminal-line terminal-cursor">█</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Buttons -->
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-                    <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
                 </div>
             </div>
+            <div class="hero-bg-glow parallax-element" data-speed="0.5"></div>
         </section>
 
         <section id="about" class="about">
