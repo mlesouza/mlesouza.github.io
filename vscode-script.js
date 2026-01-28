@@ -156,7 +156,7 @@ function setTheme(themeName) {
 }
 
 function loadTheme() {
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'theme-retro';
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'theme-github';
     console.log('[THEME] Carregando tema salvo:', savedTheme);
     document.body.className = savedTheme;
     const selector = document.getElementById('themeSelector');

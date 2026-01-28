@@ -26,7 +26,9 @@ body.theme-retro {
     --loader-bg-start: #0a0e27;
     --loader-bg-end: #1a1e3a;
     --loader-primary: #00ff00;
+    --loader-primary-rgb: 0, 255, 0;
     --loader-secondary: #0080ff;
+    --loader-secondary-rgb: 0, 128, 255;
     --loader-tertiary: #ff00ff;
     --loader-text: #569cd6;
 
@@ -58,7 +60,9 @@ body.theme-dark {
     --loader-bg-start: #1e1e1e;
     --loader-bg-end: #252526;
     --loader-primary: #569cd6;
+    --loader-primary-rgb: 86, 156, 214;
     --loader-secondary: #4ec9b0;
+    --loader-secondary-rgb: 78, 201, 176;
     --loader-tertiary: #c586c0;
     --loader-text: #569cd6;
 
@@ -90,7 +94,9 @@ body.theme-monokai {
     --loader-bg-start: #272822;
     --loader-bg-end: #1e1f1c;
     --loader-primary: #a6e22e;
+    --loader-primary-rgb: 166, 226, 46;
     --loader-secondary: #66d9ef;
+    --loader-secondary-rgb: 102, 217, 239;
     --loader-tertiary: #ae81ff;
     --loader-text: #66d9ef;
 
@@ -122,7 +128,9 @@ body.theme-dracula {
     --loader-bg-start: #282a36;
     --loader-bg-end: #21222c;
     --loader-primary: #50fa7b;
+    --loader-primary-rgb: 80, 250, 123;
     --loader-secondary: #8be9fd;
+    --loader-secondary-rgb: 139, 233, 253;
     --loader-tertiary: #ff79c6;
     --loader-text: #8be9fd;
 
@@ -154,7 +162,9 @@ body.theme-solarized {
     --loader-bg-start: #002b36;
     --loader-bg-end: #073642;
     --loader-primary: #268bd2;
+    --loader-primary-rgb: 38, 139, 210;
     --loader-secondary: #2aa198;
+    --loader-secondary-rgb: 42, 161, 152;
     --loader-tertiary: #d33682;
     --loader-text: #268bd2;
 
@@ -186,7 +196,9 @@ body.theme-nord {
     --loader-bg-start: #2e3440;
     --loader-bg-end: #3b4252;
     --loader-primary: #88c0d0;
+    --loader-primary-rgb: 136, 192, 208;
     --loader-secondary: #81a1c1;
+    --loader-secondary-rgb: 129, 161, 193;
     --loader-tertiary: #b48ead;
     --loader-text: #88c0d0;
 
@@ -218,7 +230,9 @@ body.theme-onedark {
     --loader-bg-start: #282c34;
     --loader-bg-end: #21252b;
     --loader-primary: #61afef;
+    --loader-primary-rgb: 97, 175, 239;
     --loader-secondary: #c678dd;
+    --loader-secondary-rgb: 198, 120, 221;
     --loader-tertiary: #e06c75;
     --loader-text: #61afef;
 
@@ -250,7 +264,9 @@ body.theme-github {
     --loader-bg-start: #0d1117;
     --loader-bg-end: #161b22;
     --loader-primary: #58a6ff;
+    --loader-primary-rgb: 88, 166, 255;
     --loader-secondary: #f778ba;
+    --loader-secondary-rgb: 247, 120, 186;
     --loader-tertiary: #d2a8ff;
     --loader-text: #58a6ff;
 
@@ -386,42 +402,42 @@ body {
     0%,
     100% {
         text-shadow:
-            0 0 10px rgba(0, 255, 0, 0.8),
-            0 0 20px rgba(0, 255, 0, 0.5);
+            0 0 10px rgba(var(--loader-primary-rgb, 0, 255, 0), 0.8),
+            0 0 20px rgba(var(--loader-primary-rgb, 0, 255, 0), 0.5);
     }
 
     50% {
         text-shadow:
-            0 0 20px rgba(0, 255, 0, 1),
-            0 0 30px rgba(0, 255, 0, 0.7),
-            0 0 40px rgba(0, 255, 0, 0.4);
+            0 0 20px rgba(var(--loader-primary-rgb, 0, 255, 0), 1),
+            0 0 30px rgba(var(--loader-primary-rgb, 0, 255, 0), 0.7),
+            0 0 40px rgba(var(--loader-primary-rgb, 0, 255, 0), 0.4);
     }
 }
 
 /* Sound Button */
 .sound-btn {
     margin-top: 2rem;
-    background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(0, 128, 255, 0.1));
-    border: 2px solid rgba(0, 255, 0, 0.5);
-    color: #00ff00;
+    background: linear-gradient(135deg, rgba(var(--loader-primary-rgb, 88, 166, 255), 0.1), rgba(var(--loader-secondary-rgb, 247, 120, 186), 0.1));
+    border: 2px solid var(--loader-primary);
+    color: var(--loader-primary);
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
-    font-family: 'Fira Code', monospace;
+    font-family: var(--font-mono);
     font-size: 0.9rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    text-shadow: 0 0 10px var(--loader-primary);
 }
 
 .sound-btn:hover {
-    background: linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 128, 255, 0.2));
-    border-color: #00ff00;
+    background: linear-gradient(135deg, rgba(var(--loader-primary-rgb, 88, 166, 255), 0.2), rgba(var(--loader-secondary-rgb, 247, 120, 186), 0.2));
+    border-color: var(--loader-primary);
     box-shadow:
-        0 0 20px rgba(0, 255, 0, 0.4),
-        0 0 40px rgba(0, 255, 0, 0.2);
+        0 0 20px var(--loader-primary),
+        0 0 40px var(--loader-secondary);
     transform: translateY(-2px);
 }
 
