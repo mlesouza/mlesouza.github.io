@@ -1721,9 +1721,9 @@ body:hover .cursor-outline {
     box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
 }
 
-/* Section-Specific Themes - Harmonious Blue/Indigo Palette */
+/* Section-Specific Themes - Geometric Patterns */
 
-/* Hero Section - Indigo */
+/* Hero Section - Diagonal Lines Pattern */
 .hero {
     background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
     color: white;
@@ -1738,9 +1738,13 @@ body:hover .cursor-outline {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom center;
-    background-size: cover;
-    opacity: 0.3;
+    background-image:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 35px,
+            rgba(255, 255, 255, 0.03) 35px,
+            rgba(255, 255, 255, 0.03) 70px);
+    pointer-events: none;
 }
 
 .hero .container {
@@ -1755,19 +1759,22 @@ body:hover .cursor-outline {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* About Section - Light Blue */
+/* About Section - Dots Pattern */
 .about {
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    background: #ffffff;
     position: relative;
 }
 
 .about::before {
-    content: '💼';
+    content: '';
     position: absolute;
-    top: 50px;
-    right: 50px;
-    font-size: 10rem;
-    opacity: 0.04;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
 }
 
 .about h2 {
@@ -1778,19 +1785,24 @@ body:hover .cursor-outline {
     color: var(--about-color);
 }
 
-/* Experience Section - Cyan */
+/* Experience Section - Grid Pattern */
 .experience {
-    background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+    background: #f8fafc;
     position: relative;
 }
 
 .experience::before {
-    content: '⚡';
+    content: '';
     position: absolute;
-    top: 50px;
-    left: 50px;
-    font-size: 10rem;
-    opacity: 0.04;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
 }
 
 .experience h2 {
@@ -1801,19 +1813,22 @@ body:hover .cursor-outline {
     background: linear-gradient(180deg, transparent, var(--experience-color), transparent) !important;
 }
 
-/* Skills Section - Indigo Variant */
+/* Skills Section - Waves Pattern */
 .skills {
-    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    background: #ffffff;
     position: relative;
 }
 
 .skills::before {
-    content: '✨';
+    content: '';
     position: absolute;
-    top: 50px;
-    right: 50px;
-    font-size: 10rem;
-    opacity: 0.04;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q 25 30, 50 50 T 100 50" stroke="rgba(99,102,241,0.05)" fill="none" stroke-width="2"/></svg>');
+    background-size: 100px 100px;
+    pointer-events: none;
 }
 
 .skills h2 {
@@ -1825,19 +1840,23 @@ body:hover .cursor-outline {
     box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2) !important;
 }
 
-/* Projects Section - Purple */
+/* Projects Section - Circles Pattern */
 .projects {
-    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    background: #f8fafc;
     position: relative;
 }
 
 .projects::before {
-    content: '🚀';
+    content: '';
     position: absolute;
-    top: 50px;
-    left: 50px;
-    font-size: 10rem;
-    opacity: 0.04;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .projects h2 {
@@ -1848,19 +1867,24 @@ body:hover .cursor-outline {
     border-left-color: var(--projects-color) !important;
 }
 
-/* Education Section - Sky Blue */
+/* Education Section - Hexagon Pattern */
 .education {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    background: #ffffff;
     position: relative;
 }
 
 .education::before {
-    content: '🎓';
+    content: '';
     position: absolute;
-    top: 50px;
-    right: 50px;
-    font-size: 10rem;
-    opacity: 0.04;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(30deg, rgba(14, 165, 233, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(14, 165, 233, 0.02) 87.5%, rgba(14, 165, 233, 0.02)),
+        linear-gradient(150deg, rgba(14, 165, 233, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(14, 165, 233, 0.02) 87.5%, rgba(14, 165, 233, 0.02));
+    background-size: 80px 140px;
+    pointer-events: none;
 }
 
 .education h2 {
@@ -1871,10 +1895,25 @@ body:hover .cursor-outline {
     background: linear-gradient(135deg, var(--education-color), #38bdf8) !important;
 }
 
-/* Contact Section - Dark Indigo */
+/* Contact Section - Gradient Mesh */
 .contact {
     background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .contact h2,
@@ -1902,18 +1941,56 @@ section::after {
     opacity: 0.1;
 }
 
-/* Updated Cards for Light Theme */
+/* Enhanced Cards for Better Readability */
 .project-card,
 .education-content,
 .skill-item {
     background: white !important;
-    border: 2px solid var(--border) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(79, 70, 229, 0.1) !important;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        0 4px 12px rgba(79, 70, 229, 0.08) !important;
+    transition: all var(--transition-normal);
 }
 
 .project-card:hover,
 .education-content:hover {
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+    border-color: var(--primary) !important;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 12px 40px rgba(79, 70, 229, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Better Text Contrast in Cards */
+.project-card h3,
+.education-content h3 {
+    color: var(--text-primary) !important;
+    font-weight: 700;
+}
+
+.project-card p,
+.education-content p,
+.education-description {
+    color: var(--text-secondary) !important;
+    line-height: 1.7;
+}
+
+.project-company,
+.education-institution {
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+/* Section Headers with Better Visibility */
+section h2 {
+    color: var(--text-primary) !important;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: var(--text-secondary) !important;
 }
 
 /* Header Update for Light Theme */
