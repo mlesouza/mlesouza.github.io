@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Portfolio script loaded!");
+    console.log("Portfolio script loaded! Version: God-Tier Polish v2");
     // Typing Effect
     const typingTextElement = document.querySelector('.typing-text');
     const words = ["Angular", "React", "React Native", "TypeScript", "Node.js"];
